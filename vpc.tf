@@ -110,3 +110,4 @@ resource "aws_route_table_association" "main-private-1-a" {
   subnet_id      = "${aws_subnet.main-private-1.id}"
   route_table_id = "${aws_route_table.main-public.id}"
 }
+
