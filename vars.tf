@@ -10,6 +10,9 @@ variable "PATH_TO_PUBLIC_KEY" {
   default = "../keys/aws_rsa.pub"
 }
 
+variable "RDS_USER" {}
+variable "RDS_PASSWORD" {}
+
 variable "AMIS" {
   type = "map"
 
@@ -49,4 +52,9 @@ variable "main_pub3_cidr" {
 variable "main_priv1_cidr" {
   description = "CIDR for Subnet Private 1"
   default     = "10.0.4.0/24"
+}
+
+variable "main_priv2_cidr" {
+  description = "CIDR for Subnet Private 2"
+  default     = "10.0.5.0/24"
 }
