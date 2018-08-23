@@ -6,6 +6,7 @@ resource "aws_instance" "instanceDB" {
   key_name                    = "${aws_key_pair.mykeypair.key_name}"
   source_dest_check           = false
   associate_public_ip_address = true
+
   user_data = <<-EOF
             #!/bin/bash
             sudo apt-get -y update
@@ -13,7 +14,8 @@ resource "aws_instance" "instanceDB" {
             sed -i 's/^bind-address/#bind-address/g' /etc/mysql/mariadb.conf.d/50-server.cnf
             service mysql restart
             EOF
+
   tags {
-        Name = "instanceDB"
+    Name = "instanceDB"
   }
 }

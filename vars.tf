@@ -1,14 +1,18 @@
 variable "AWS_REGION" {
   default = "us-east-2"
 }
+
 variable "PATH_TO_PRIVATE_KEY" {
   default = "../keys/aws_rsa"
 }
+
 variable "PATH_TO_PUBLIC_KEY" {
   default = "../keys/aws_rsa.pub"
 }
+
 variable "AMIS" {
   type = "map"
+
   default = {
     us-east-1 = "ami-13be557e"
     us-east-2 = "ami-5e8bb23b"
@@ -16,6 +20,7 @@ variable "AMIS" {
     us-west-2 = "ami-06b94666"
   }
 }
+
 variable "AMI_TYPE" {
   description = "Ami type"
   default     = "t2.micro"
@@ -44,14 +49,4 @@ variable "main_pub3_cidr" {
 variable "main_priv1_cidr" {
   description = "CIDR for Subnet Private 1"
   default     = "10.0.4.0/24"
-}
-
-variable "main_priv2_cidr" {
-  description = "CIDR for Subnet Private 2"
-  default     = "10.0.5.0/24"
-}
-
-variable "main_priv3_cidr" {
-  description = "CIDR for Subnet Private 3"
-  default     = "10.0.6.0/24"
 }
